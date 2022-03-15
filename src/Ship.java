@@ -1,8 +1,9 @@
 import java.util.Arrays;
 public class Ship {
-    String name;
-    String[] spotArr;
-    boolean[] spotIsUp;
+    private String name;
+    private String[] spotArr;
+    private boolean[] spotIsUp;
+    private boolean isFloat = true;
 
     public Ship(String name, String spots) {
         this.name = name;
@@ -10,7 +11,15 @@ public class Ship {
         spotIsUp = new boolean[spotIsUp.length];
     }
 
-    private hit(String )
+    public void hit(String coordinate) {
+        int idx = 0;
+        for(int i = 0; i < spotArr.length; i++) {
+            if(coordinate.equals(spotArr[i])) {
+                idx = i;
+            }
+        }
+
+    }
 
     private checkStatus
 }

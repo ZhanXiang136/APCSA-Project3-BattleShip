@@ -1,14 +1,20 @@
+import java.util.ArrayList;
 public class Board {
     private String[][] board;
-    public Board() {
-        board = new String[10][10];
-        final
+    final private String[] SHIP_NAME = {"Carrier", "Battleship", "Cruiser", "Submarine", "Destroyer"};
+    final private int[] SHIP_SPOT = {5,4,3,3,2};
+    private ArrayList<String> shipLocationArr;
 
+    public Board(String userType) {
+        board = new String[10][10];
+        shipLcoationArr = new ArrayList<>();
         for(int row = 0; row < board.length; row++) {
             for(int col = 0; col < board[row].length;col++) {
                 board[row][col] = "-";
             }
         }
+
+        fillBoard(userType);
     }
 
     public void printBoard() {
@@ -24,5 +30,32 @@ public class Board {
         }
     }
 
-    public void fill
+    private void fillBoard(String userType) {
+        switch (userType) {
+            case "None":
+                break;
+            case "player":
+                break;
+            case "computer":
+                break;
+            default:
+                System.out.println("Cannot read parameter " + userType);
+        }
+    }
+
+    private boolean checkIfTaken(String[] arr) {
+        for(String spot : arr) {
+            if(shipLocationArr.contains(spot)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean checkUserInput(String input) {
+        if(input.length() == 2 || "ABCDEFGHIJ".contains(input.substring(0,1)) || "0123456789".contains(input.substring(1))){
+            return true;
+        }
+        return false;
+    }
 }
