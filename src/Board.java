@@ -44,6 +44,7 @@ public class Board {
                         if(checkUser)
                     }
             }
+
                 break;
             case "computer":
                 break;
