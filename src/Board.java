@@ -7,7 +7,7 @@ public class Board {
 
     public Board(String userType) {
         board = new String[10][10];
-        shipLcoationArr = new ArrayList<>();
+        shipLocationArr = new ArrayList<>();
         for(int row = 0; row < board.length; row++) {
             for(int col = 0; col < board[row].length;col++) {
                 board[row][col] = "-";
@@ -35,6 +35,15 @@ public class Board {
             case "None":
                 break;
             case "player":
+                for(int i = 0; i < 5; i++) {
+                    while (true) {
+                        printBoard();
+                        U.println("Where do you want to put your " + SHIP_NAME[i] + ", which takes up " + SHIP_SPOT[i] + "spaces?");
+                        String userInput1 = U.scanStr("Enter your first spot (LetterNumber) e.g. (A1): ");
+                        String userInput2 = U.scanStr("Enter your second spot (LetterNumber) e.g. (A1): ");
+                        if(checkUser)
+                    }
+            }
                 break;
             case "computer":
                 break;

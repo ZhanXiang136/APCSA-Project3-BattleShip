@@ -1,11 +1,11 @@
 import java.util.Scanner;
-//Untility class
+//Utility class
 public class U
 {
     public static Scanner scanStr = new Scanner(System.in);
     public static Scanner scanInt = new Scanner(System.in);
 
-    //no construtor needed
+    //no constructor needed
 
     //prints string slowly
     public static void print(String str)
@@ -87,8 +87,9 @@ public class U
     }
 
     //scanner method
-    public static String scanStr()
+    public static String scanStr(String s)
     {
+        print(s);
         return scanStr.nextLine();
     }
     public static int scanInt()
@@ -114,7 +115,7 @@ public class U
     //clearScreen() + scanStr
     public static void clear()
     {
-        scanStr();
+        scanStr("Enter in (LetterNumber) e.g. (A1): ");
         clearScreen();
     }
 }
