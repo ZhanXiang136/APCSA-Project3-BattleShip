@@ -18,6 +18,9 @@ public class Ship {
                 idx = i;
             }
         }
+    }
 
+    public String[] getSpotArr() {
+        return spotArr;
     }
 }
