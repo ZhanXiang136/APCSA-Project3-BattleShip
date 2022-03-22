@@ -8,9 +8,10 @@ public class Board {
         board = new String[10][10];
         ships = {new Ship("Carrier", 4), new Ship("Battleship", 4), new Ship("Cruiser", 3), new Ship("Submarine", 3), new Ship("Destroyer", 2)}
         //shipLocationArr = new ArrayList<>();
+        String[] colSymArr = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
         for(int row = 0; row < board.length; row++) {
             for(int col = 0; col < board[row].length;col++) {
-                board[row][col] = "-";
+                board[row][col] = new Space(colSymArr[row]+col);
             }
         }
 
