@@ -1,48 +1,20 @@
 import java.util.Scanner;
-//Utility class
+
+/**
+ * This class represents a Utility object
+ *
+ * @author Zhan Xiang Zheng
+ */
+
 public class U
 {
+    /** Creates scanner object */
     public static Scanner scanStr = new Scanner(System.in);
-    public static Scanner scanInt = new Scanner(System.in);
 
-    //no constructor needed
-
-    //prints string slowly
-    public static void print(String str)
-    {
-        try
-        {
-            for (int i = 0; i < str.length(); i++)
-            {
-                Thread.sleep(50);
-                System.out.print(str.substring(i, i+1));
-            }
-        }
-        catch (Exception e)
-        {
-
-            System.out.println(e);
-        }
-    }
-
-    public static void print(String str, int speed)
-    {
-        try
-        {
-            for (int i = 0; i < str.length(); i++)
-            {
-                Thread.sleep(speed);
-                System.out.print(str.substring(i, i+1));
-            }
-        }
-        catch (Exception e)
-        {
-
-            System.out.println(e);
-        }
-    }
-
-    //prints string slowly + next line
+    /**
+     * Prints line out slowly
+     *
+     */
     public static void println(String str)
     {
         try
@@ -50,7 +22,7 @@ public class U
             for (int i = 0; i < str.length(); i++)
             {
                 Thread.sleep(50);
-                System.out.print(str.substring(i, i+1));
+                System.out.print(str.charAt(i));
             }
         }
         catch (Exception e)
@@ -61,61 +33,72 @@ public class U
         System.out.println();
     }
 
-    public static void println(String str, int speed)
-    {
-        try
-        {
-            for (int i = 0; i < str.length(); i++)
-            {
-                Thread.sleep(speed);
-                System.out.print(str.substring(i, i+1));
-            }
-        }
-        catch (Exception e)
-        {
 
-            System.out.println(e);
-        }
-        System.out.println();
-    }
-
-    //clear screen
+    /**
+     * Clears the console
+     * Doesn't work on intellj, so I added in empty print statements
+     *
+     */
     public static void clearScreen()
     {
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
-    //scanner method
+    /**
+     * Scanner method
+     *
+     * @return user input
+     */
     public static String scanStr(String s)
     {
-        print(s);
-        return scanStr.nextLine();
-    }
-    public static int scanInt()
-    {
-        return scanInt.nextInt();
+        System.out.print(s);
+        String temp = scanStr.nextLine();
+        return temp;
     }
 
-    //sleep
-    public static void sleep(int milSecond)
-    {
-        try
-        {
-            Thread.sleep(milSecond);
-        }
-        catch (Exception e)
-        {
 
-            System.out.println(e);
-        }
-    }
-
-    //clears the screen when user is ready to move on
-    //clearScreen() + scanStr
+    /**
+     * Clears the console on the user's command
+     *
+     */
     public static void clear()
     {
-        scanStr("Enter in (LetterNumber) e.g. (A1): ");
+        scanStr("Click Enter to Continue");
         clearScreen();
     }
+
 }
